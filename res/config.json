@@ -3,8 +3,8 @@
     "command_prefix" : "!",
     "term_formatting" : {
         "log_level" : 1,
+        "status_pre" : "detailed",
         "status_codes" : {
-            "pre" : "detailed",
             "warning" : {
                 "color" : "yellow",
                 "pre_detailed" : "Warning",
