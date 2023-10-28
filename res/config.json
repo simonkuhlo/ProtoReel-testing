@@ -2,6 +2,7 @@
     "used_client" : "standard_client",
     "command_prefix" : "!",
     "term_formatting" : {
+        "log_level" : 1,
         "status_codes" : {
             "pre" : "detailed",
             "warning" : {

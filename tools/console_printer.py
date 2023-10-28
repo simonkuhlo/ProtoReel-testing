@@ -6,8 +6,11 @@ from res import config_handler
 import termcolor
 
 
-async def print_status(status, message):
+async def print_status(status : str, level : int, message : str):
     config = config_handler.get_config("term_formatting")
+    log_level = int(config["log_level"])
+    if level < log_level:
+        return
     config = config["status_codes"]
     current_status = config[status]
     
@@ -22,4 +25,4 @@ async def print_status(status, message):
 
 
 if __name__ == "__main__":
-    asyncio.run(print_status("info","Hallo Leute"))
+    asyncio.run(print_status("info", 1,"Hallo Leute"))
