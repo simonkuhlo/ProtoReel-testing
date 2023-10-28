@@ -3,24 +3,25 @@
     "command_prefix" : "!",
     "term_formatting" : {
         "status_codes" : {
+            "pre" : "detailed",
             "warning" : {
                 "color" : "yellow",
-                "pre_detailed" : "[Warning]",
-                "pre_short" : "[!]"
+                "pre_detailed" : "Warning",
+                "pre_short" : "!"
             },
             "error" : {
                 "color" : "red",
-                "pre_detailed" : "[Error]",
-                "pre_short" : "[E]"
+                "pre_detailed" : "Error",
+                "pre_short" : "E"
             },
             "info" : {
                 "color" : "cyan",
-                "pre_detailed" : "[Info]",
-                "pre_short" : "[I]"
+                "pre_detailed" : "Info",
+                "pre_short" : "I"
             },
             "success" : {
                 "color" : "light_green",
-                "pre_detailed" : "[Success]",
-                "pre_short" : "[S]"                
+                "pre_detailed" : "Success",
+                "pre_short" : "S"                
             }}}
 }

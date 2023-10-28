@@ -6,16 +6,20 @@ from res import config_handler
 import termcolor
 
 
-async def get_status_config():
-    config = config_handler.get_config("term_formatting")
-    status_config = config["status_codes"]
-    return(status_config)
-
 async def print_status(status, message):
-    return
-
+    config = config_handler.get_config("term_formatting")
+    config = config["status_codes"]
+    current_status = config[status]
+    
+    message_head_color = current_status["color"]
+    message_head_config = f'pre_{config["pre"]}'
+    message_head_text = f"[{current_status[message_head_config]}]"
+    message_head_colored = termcolor.colored(message_head_text, message_head_color)
+    
+    finished_message = f"{message_head_colored} {message}"
+    print(finished_message)
 
 
 
 if __name__ == "__main__":
-    asyncio.run(get_status_config())
+    asyncio.run(print_status("info","Hallo Leute"))
