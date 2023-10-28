@@ -1,6 +1,6 @@
 import discord
 import asyncio
-import bot_setup
+import setup_helper.bot_setup as bot_setup
 from discord.ext import commands
 
 
