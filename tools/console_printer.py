@@ -1,6 +1,5 @@
 if __name__ == "__main__":
     import sys
-    import asyncio
     sys.path.append(".") 
 from tools import config_handler
 import termcolor
@@ -11,7 +10,7 @@ def print_status(status : str = "info", level : int = 5, message : str = None):
     log_level = int(config["log_level"])
     if level < log_level:
         return
-    current_status = config["status_codes"][status]
+    current_status = config_handler.get_adv_config("term_formatting_status_codes")[status]
     
     message_head_color = current_status["color"]
     message_head_config = f'pre_{config["status_pre"]}'
@@ -24,4 +23,4 @@ def print_status(status : str = "info", level : int = 5, message : str = None):
 
 
 if __name__ == "__main__":
-    asyncio.run(print_status("info", 1,"Hallo Leute"))
+    print_status("info", 1,"Hallo Leute")

@@ -1,0 +1,24 @@
+{
+    "term_formatting_status_codes" : {
+        "warning" : {
+            "color" : "yellow",
+            "pre_detailed" : "Warning",
+            "pre_short" : "!"
+        },
+        "error" : {
+            "color" : "red",
+            "pre_detailed" : "Error",
+            "pre_short" : "E"
+        },
+        "info" : {
+            "color" : "cyan",
+            "pre_detailed" : "Info",
+            "pre_short" : "I"
+        },
+        "success" : {
+            "color" : "light_green",
+            "pre_detailed" : "Success",
+            "pre_short" : "S"                
+        }
+    }
+}

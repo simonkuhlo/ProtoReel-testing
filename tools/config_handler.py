@@ -11,3 +11,9 @@ def get_config(key):
                 whole_config = json.load(json_file)
                 config_value = whole_config[key]
                 return(config_value)
+
+def get_adv_config(key):
+        with open("res/adv_config.json", "r") as json_file:
+                whole_config = json.load(json_file)
+                config_value = whole_config[key]
+                return(config_value)
