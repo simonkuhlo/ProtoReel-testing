@@ -6,20 +6,19 @@ from res import config_handler
 import termcolor
 
 
-async def print_status(status : str = "info", level : int = 5, message : str = None):
+def print_status(status : str = "info", level : int = 5, message : str = None):
     config = config_handler.get_config("term_formatting")
     log_level = int(config["log_level"])
     if level < log_level:
         return
-    config = config["status_codes"]
-    current_status = config[status]
+    current_status = config["status_codes"][status]
     
     message_head_color = current_status["color"]
-    message_head_config = f'pre_{config["pre"]}'
+    message_head_config = f'pre_{config["status_pre"]}'
     message_head_text = f"[{current_status[message_head_config]}]"
     message_head_colored = termcolor.colored(message_head_text, message_head_color)
     
-    finished_message = f"{message_head_colored} {message}"
+    finished_message = f"\n{message_head_colored} {message}\n"
     print(finished_message)
 
 

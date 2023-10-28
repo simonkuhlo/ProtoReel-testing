@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from tools import dotenv_handler
+from tools import console_printer as p
 
 client_command_prefix = commands.when_mentioned_or("!")
 client_intents = discord.Intents.all()
@@ -18,6 +19,5 @@ class Client(commands.Bot):
         return(token)
     
     async def on_ready(self):
-        print(f'\n[ Logged on as {self.user}! ]\n')
-        #await setup.setup_all_databases(self)
+        p.print_status("success", 1, f'Logged on as {self.user}!')
         await self.tree.sync()

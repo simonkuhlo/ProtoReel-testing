@@ -1,8 +1,13 @@
-import dotenv
-import asyncio
+if __name__ == "__main__":
+    import sys
+    sys.path.append(".")
+    
 import os
-if __name__ == "tools.dotenv_handler":
-    from res import config_handler
+import dotenv
+
+from res import config_handler 
+from tools import console_printer as p
+
 
 
 def get_token(client:str) -> str:
@@ -10,7 +15,7 @@ def get_token(client:str) -> str:
     token = os.getenv(f"TOKEN-{client}")
 
     if token is None:
-        print("\n[!] No Token. Add / Update the Token for this Client using [2]update_token.\n")
+        p.print_status("error", 1, "No Token. Add / Update the Token for this Client using [2]update_token.")
         
     return(token)
 
@@ -28,29 +33,30 @@ def main():
         case "1":
             client_name = input("Client name?\n->")
             token = get_token(client_name)
-            print(f"{client_name}'s Token: {token}.")
+            p.print_status("info", 1, f"{client_name}'s Token: {token}.")
 
         case "2":
             client_name = input("Client name?\n->")
             token = input("Token?\n->")
             add_token(client_name, token)
-            print(f"\nAdded the following Token for client {client_name}: {token}")
+            p.print_status("error", 2,f"\nAdded the following Token for client {client_name}: {token}")
             
         case "3":
-            print(f"WIP")
+            p.print_status("warning", 2,("WIP"))
   
         case _:
-            print(f"[{action}] is not a valid action.")
+            p.print_status("error", 1, f"[{action}] is not a valid action.")
+            
     continue_or_exit()
     
 def load_env():
     is_env = dotenv.load_dotenv()
     
     if not is_env:
-        print("\n[!] No .env File. Create the .env-file using the [3]create_env.\n")
+        p.print_status("error", 1,"\n[!] No .env File. Create the .env-file using the [3]create_env.\n")
 
 def continue_or_exit():
-    next_task = input("\nDo another Task? [y/n]\n-> ")
+    next_task = input("Do another Task? [y/n]\n-> ")
     if next_task == "y":
         main()
     else:
