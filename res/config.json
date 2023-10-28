@@ -1,8 +1,10 @@
 {
     "used_client" : "standard_client",
+    "used_token" : "Robober",
     "command_prefix" : "!",
     "term_formatting" : {
         "log_level" : 1,
+        "show_log_level" : true,
         "status_pre" : "detailed"
     }
 }

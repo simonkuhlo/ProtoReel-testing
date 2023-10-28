@@ -16,7 +16,7 @@ class Client(commands.Bot):
             )
         
     def get_token(self):
-        token = dotenv_handler.get_active_client_token()
+        token = dotenv_handler.get_config_token()
         return(token)
     
     async def on_ready(self):
