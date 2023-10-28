@@ -2,7 +2,7 @@ if __name__ == "__main__":
     import sys
     import asyncio
     sys.path.append(".") 
-from res import config_handler
+from tools import config_handler
 import termcolor
 
 

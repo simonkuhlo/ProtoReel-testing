@@ -1,6 +1,6 @@
 import os
 import imp
-from res import config_handler
+from tools import config_handler
 from tools import console_printer as p
 
 async def create_active_client():

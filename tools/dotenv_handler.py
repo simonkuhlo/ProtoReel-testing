@@ -5,7 +5,7 @@ if __name__ == "__main__":
 import os
 import dotenv
 
-from res import config_handler 
+from tools import config_handler 
 from tools import console_printer as p
 
 
