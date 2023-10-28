@@ -6,7 +6,7 @@ from res import config_handler
 import termcolor
 
 
-async def print_status(status : str, level : int, message : str):
+async def print_status(status : str = "info", level : int = 5, message : str = None):
     config = config_handler.get_config("term_formatting")
     log_level = int(config["log_level"])
     if level < log_level:
