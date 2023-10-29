@@ -3,9 +3,15 @@ from tools import console_printer as p
 
 
 
-class clone_cog(discord.commands.Cog):
+class readychecker(discord.ext.commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-    @discord.commands.Cog.listener() 
+    @discord.ext.commands.Cog.listener() 
     async def on_ready(self):
-        p.print_status("info", 1, f"Module {__name__} loaded.")
+        p.print_status("info", 1, f"Module {p.highlighted(__name__)} loaded.")
+
+       
+async def setup(bot):
+    cogs_to_load = [readychecker]
+    for cog in cogs_to_load:
+        await bot.add_cog(cog(bot))

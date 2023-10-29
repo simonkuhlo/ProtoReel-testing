@@ -31,10 +31,12 @@ async def create_active_client():
     return active_client
 
 async def load_all_plugins(client : discord.Client):
+    plugin_path = f"{client_path}/plugins"
     p.print_status("info", 4, f"Loading all bot Plugins")
-    module_dict = await modules.get_modules_by_type("[E]", f"{client_path}/plugins")
+    module_dict = await modules.get_modules_by_type("[E]", plugin_path)
+    
     for key in module_dict.keys():
       for module in module_dict[key]:
         module = module[:-3]
-        path = f"plugins.{key}.{module}"
+        path = f"{plugin_path.replace('/','.')}.{key}.{module}"
         await client.load_extension(path)

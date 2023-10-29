@@ -14,6 +14,6 @@ class Client(commands.Bot):
             )
     
     async def on_ready(self):
-        p.print_status("success", 1, f'Logged on as {self.user}!')
+        p.print_status("success", 1, f'Logged on as {p.highlighted(self.user)}!')
         p.print_status("info", 4, f'Syncing command tree...')
         await self.tree.sync()

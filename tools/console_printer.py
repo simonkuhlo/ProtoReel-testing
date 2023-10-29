@@ -60,7 +60,14 @@ def print_status(status : str = "info", level : int = 5, message : str = None):
     finished_message = f"{message_head_colored}{log_level_colored}{datetime_colored}=> {message}{calling_module_colored}\n"
     print(finished_message)
 
+def highlighted(text : str):
+    highlighted_text = termcolor.colored(text, "light_blue", attrs = ["bold"])
+    return(highlighted_text)
 
+def lowighted(text : str):
+    highlighted_text = termcolor.colored(text, "grey", attrs = ["bold"])
+    return(highlighted_text)
 
 if __name__ == "__main__":
+    print(highlighted("Hallo"))
     print_status("info", 1,"Hallo Leute")
