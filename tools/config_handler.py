@@ -1,6 +1,9 @@
+if __name__ == "__main__":
+    import sys
+    sys.path.append(".") 
 import json
 import os
-from tools import console_printer as p
+from tools.console_printer import Printer as p
 
 with open("res/config.json", "r") as json_file:
         config = json.load(json_file)

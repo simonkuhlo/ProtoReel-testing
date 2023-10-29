@@ -1,12 +1,8 @@
-if __name__ == "__main__":
-    import sys
-    sys.path.append(".")
-    
 import os
 import dotenv
 
 from tools import config_handler 
-from tools import console_printer as p
+from tools.console_printer import Printer as p
 
 is_env = False
 

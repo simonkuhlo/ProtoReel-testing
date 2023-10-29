@@ -1,4 +1,5 @@
-{   "config_overrides" : {
+{   
+    "config_overrides" : {
     "command_prefix" : "DEBUG",
     "term_formatting" : {
         "log_level" : 5,
