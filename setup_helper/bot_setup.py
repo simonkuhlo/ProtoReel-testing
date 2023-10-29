@@ -22,6 +22,6 @@ async def create_active_client():
         exit()
     token = dotenv_handler.get_config_token()
     p.print_status("info", 4, f"Instantiating client")
-    active_client = client.Client()
+    active_client = client.Client(token)
     p.print_status("success", 5, f"Active client created.")
     return active_client
