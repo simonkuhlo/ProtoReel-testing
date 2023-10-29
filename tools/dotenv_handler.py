@@ -52,7 +52,7 @@ def main():
     continue_or_exit()
     
 def load_env():
-    p.print_status("info", 5, f"Loading .env file")
+    p.print_status("info", 4, f"Loading .env file")
     global is_env
     is_env = dotenv.load_dotenv()
     if not is_env:
@@ -67,7 +67,7 @@ def continue_or_exit():
         exit()
         
 def get_config_token():
-    p.print_status("info", 5, f"Getting token from config")
+    p.print_status("info", 4, f"Getting token from config")
     if not is_env:
         load_env()
     desired_token = config_handler.get_config("used_token")
