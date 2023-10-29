@@ -1,11 +1,12 @@
-{
-    "used_client" : "debug_client",
-    "used_token" : "Robober",
-    "command_prefix" : "!",
+{   "config_overrides" : {
+    "command_prefix" : "DEBUG",
     "term_formatting" : {
-        "log_level" : 1,
+        "log_level" : 5,
         "show_log_level" : true,
         "show_time" : true,
         "status_pre" : "detailed"
+    }},
+    "adv_config_overrides" : {
+
     }
 }
