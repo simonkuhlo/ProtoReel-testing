@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from tools import dotenv_handler
-from tools import config_handler
 from tools import console_printer as p
 
 client_command_prefix = commands.when_mentioned_or("!")

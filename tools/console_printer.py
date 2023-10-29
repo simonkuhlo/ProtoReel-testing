@@ -28,7 +28,7 @@ def startup():
 def print_status(status : str = "info", level : int = 5, message : str = None):
     if not config:
         startup()
-    if level < log_level:
+    if level > log_level:
         return
     current_status = statuses[status]
     message_head_color = current_status["color"]
