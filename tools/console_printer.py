@@ -4,6 +4,7 @@ if __name__ == "__main__":
 from tools import config_handler
 import termcolor
 import datetime
+import inspect 
 
 """"
 USAGE: 
@@ -35,8 +36,10 @@ def print_status(status : str = "info", level : int = 5, message : str = None):
     message_head_config = f'pre_{config["status_pre"]}'
     message_head_text = f"[{current_status[message_head_config]}]"
     message_head_colored = termcolor.colored(message_head_text, message_head_color)
+    
     log_level_text = ""
     datetime_text = ""
+    calling_module_text = ""
     
     if config["show_log_level"]:
         log_level_text = f"[{level}] "
@@ -47,8 +50,14 @@ def print_status(status : str = "info", level : int = 5, message : str = None):
         datetime_text = f"[{current_time}]"
         datetime_colored = termcolor.colored(datetime_text, "grey")
     
+    if config["show_calling_module"]:
+        from_stack = inspect.stack()[1]
+        module = inspect.getmodule(from_stack[0])
+        module_name = module.__name__
+        calling_module_text = f"\nCalled by [{module_name}]"
+        calling_module_colored = termcolor.colored(calling_module_text, "grey")
         
-    finished_message = f"{message_head_colored}{log_level_colored}{datetime_colored}=> {message}\n"
+    finished_message = f"{message_head_colored}{log_level_colored}{datetime_colored}=> {message}{calling_module_colored}\n"
     print(finished_message)
 
 
