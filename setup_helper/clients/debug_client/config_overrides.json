@@ -4,7 +4,9 @@
         "log_level" : 5,
         "show_log_level" : true,
         "show_time" : true,
+        "show_calling_module" : true,
         "status_pre" : "detailed"
+        
     }},
     "adv_config_overrides" : {
 
