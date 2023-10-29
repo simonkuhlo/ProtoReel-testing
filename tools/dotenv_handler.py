@@ -72,7 +72,7 @@ def get_config_token():
         load_env()
     desired_token = config_handler.get_config("used_token")
     active_client_token = get_token(desired_token)
-    p.print_status("success", 5, f"Got desired Token: {active_client_token}")
+    p.print_status("success", 5, f"Got desired Token")
     return(active_client_token)
 
 if __name__ == "__main__":

@@ -5,6 +5,7 @@
     "term_formatting" : {
         "log_level" : 1,
         "show_log_level" : true,
+        "show_time" : true,
         "status_pre" : "detailed"
     }
 }
