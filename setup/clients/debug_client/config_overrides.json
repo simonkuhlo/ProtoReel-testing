@@ -5,8 +5,8 @@
         "show_log_level" : true,
         "show_time" : true,
         "show_calling_module" : true,
+        "write_logs" : true,
         "status_pre" : "detailed"
-        
     }},
     "adv_config_overrides" : {
 

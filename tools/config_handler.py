@@ -16,7 +16,6 @@ if os.path.exists(config_override_file):
                 config_overrides = overrides["config_overrides"]
                 adv_config_overrides = overrides["adv_config_overrides"]
         config.update(config_overrides)
-        print(config)
         adv_config.update(adv_config)
         
 def get_active_client_name(print_log : bool = True):
