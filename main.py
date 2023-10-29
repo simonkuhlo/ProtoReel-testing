@@ -1,5 +1,5 @@
 import asyncio
-import setup_helper.bot_setup as bot_setup
+import setup.bot_setup as bot_setup
 from tools import console_printer as p
 from tools import config_handler
 from tools import logo_printer

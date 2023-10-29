@@ -37,9 +37,9 @@ def print_status(status : str = "info", level : int = 5, message : str = None):
     message_head_text = f"[{current_status[message_head_config]}]"
     message_head_colored = termcolor.colored(message_head_text, message_head_color)
     
-    log_level_text = ""
-    datetime_text = ""
-    calling_module_text = ""
+    log_level_colored = ""
+    datetime_colored = ""
+    calling_module_colored = ""
     
     if config["show_log_level"]:
         log_level_text = f"[{level}] "
