@@ -8,8 +8,14 @@ from setup.helpers import bot_modules as modules
 
 client_path = None
 
-async def create_active_client():
+async def main_setup():
     p.print_status("info", 4, f"Creating active client")
+    active_client = await create_active_client
+    await load_all_plugins(active_client)
+    p.print_status("success", 5, f"Active client created.")
+    return active_client
+    
+async def create_active_client():  
     active_client_name = config_handler.get_active_client_name()
     global client_path
     client_path = f"setup/clients/{active_client_name}"
@@ -26,8 +32,6 @@ async def create_active_client():
     token = dotenv_handler.get_config_token()
     p.print_status("info", 4, f"Instantiating client")
     active_client = client.Client(token)
-    await load_all_plugins(active_client)
-    p.print_status("success", 5, f"Active client created.")
     return active_client
 
 async def load_all_plugins(client : discord.Client):
