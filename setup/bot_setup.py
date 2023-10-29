@@ -11,7 +11,8 @@ client_path = None
 async def create_active_client():
     p.print_status("info", 4, f"Creating active client")
     active_client_name = config_handler.get_active_client_name()
-    client_path = f"setup_helper/clients/{active_client_name}"
+    global client_path
+    client_path = f"setup/clients/{active_client_name}"
     p.print_status("info", 4, f"Checking if client path exists")
     if os.path.exists(client_path):
         p.print_status("info", 4, f"Checking for client module")
@@ -30,7 +31,7 @@ async def create_active_client():
     return active_client
 
 async def load_all_plugins(client : discord.Client):
-    p.print_status("info", 4, f"Loading all modules for: {client}")
+    p.print_status("info", 4, f"Loading all bot Plugins")
     module_dict = await modules.get_modules_by_type("[E]", f"{client_path}/plugins")
     for key in module_dict.keys():
       for module in module_dict[key]:

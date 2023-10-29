@@ -8,7 +8,7 @@ with open("res/config.json", "r") as json_file:
 with open("res/adv_config.json", "r") as json_file:
         adv_config = json.load(json_file)
 
-config_override_file = f'setup_helper/clients/{config["used_client"]}/config_overrides.json'
+config_override_file = f'setup/clients/{config["used_client"]}/config_overrides.json'
 
 if os.path.exists(config_override_file):
         with open(config_override_file, "r") as json_file: 
