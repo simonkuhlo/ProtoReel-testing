@@ -8,7 +8,7 @@ class readychecker(discord.ext.commands.Cog):
         self.bot = bot
     @discord.ext.commands.Cog.listener() 
     async def on_ready(self):
-        p.print_status("info", 1, f"Module {p.highlighted(__name__)} loaded.")
+        p.print_status("info", 1, f"Module {p.lowighted(__name__)} loaded.")
 
        
 async def setup(bot):

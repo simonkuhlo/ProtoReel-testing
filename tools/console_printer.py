@@ -64,7 +64,7 @@ def highlighted(text : str):
     highlighted_text = termcolor.colored(text, "light_blue", attrs = ["bold"])
     return(highlighted_text)
 
-def lowighted(text : str):
+def lowlighted(text : str):
     highlighted_text = termcolor.colored(text, "grey", attrs = ["bold"])
     return(highlighted_text)
 
