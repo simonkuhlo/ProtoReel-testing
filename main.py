@@ -1,13 +1,13 @@
 import asyncio
 import setup.bot_setup as bot_setup
-from tools import console_printer as p
+from tools.console_printer import SP
 from tools import config_handler
 from tools import logo_printer
 
 async def start_bot():
     logo_printer.print_logo_1()
     client_name = config_handler.get_active_client_name(print_log = False)
-    p.print_status("info", 1, f"Welcome to ProtoReel7. Getting ready. Using {p.highlighted(client_name)}")   
+    SP.print_status("info", 1, f"Welcome to ProtoReel7. Getting ready. Using {SP.highlighted(client_name)}")   
     active_client = await bot_setup.main_setup()
     await active_client.start(active_client.token)
 

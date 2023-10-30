@@ -3,7 +3,7 @@ if __name__ == "__main__":
     sys.path.append(".") 
 import json
 import os
-from tools.console_printer import Printer as p
+from tools.console_printer import SP
 
 with open("res/config.json", "r") as json_file:
         config = json.load(json_file)
@@ -23,24 +23,24 @@ if os.path.exists(config_override_file):
         
 def get_active_client_name(print_log : bool = True):
         if print_log:
-                p.print_status("info", 4, f"Getting config: active client name")
+                SP.print_status("info", 4, f"Getting config: active client name")
         active_client_name = config["used_client"]
         if print_log:
-                p.print_status("success", 5, f"Got config: client name -> {p.highlighted(active_client_name)}")
+                SP.print_status("success", 5, f"Got config: client name -> {SP.highlighted(active_client_name)}")
         return(active_client_name)
         
 def get_config(key : str, print_log : bool = True):
         if print_log:
-                p.print_status("info", 4, f"Getting config: {p.lowlighted(key)}")    
+                SP.print_status("info", 4, f"Getting config: {SP.lowlighted(key)}")    
         config_value = config[key]
         if print_log:
-                p.print_status("success", 5, f"Got config: {p.lowlighted(key)} -> {p.highlighted(config_value)}")
+                SP.print_status("success", 5, f"Got config: {SP.lowlighted(key)} -> {SP.highlighted(config_value)}")
         return(config_value)
 
 def get_adv_config(key : str, print_log : bool = True):
         if print_log:
-                p.print_status("info", 4, f"Getting advanced config: {key}")
+                SP.print_status("info", 4, f"Getting advanced config: {key}")
         config_value = adv_config[key]
         if print_log:
-                p.print_status("success", 5, f"Got advanced config: {key} -> {config_value}")
+                SP.print_status("success", 5, f"Got advanced config: {key} -> {config_value}")
         return(config_value)
