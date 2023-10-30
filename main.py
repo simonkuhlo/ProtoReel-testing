@@ -2,7 +2,7 @@ import asyncio
 import setup.bot_setup as bot_setup
 from tools.console_printer import SP
 from tools import config_handler
-from tools import logo_printer
+from tools.printer_ext import logo_printer
 
 async def start_bot():
     logo_printer.print_logo_1()

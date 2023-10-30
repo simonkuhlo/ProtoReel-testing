@@ -10,7 +10,7 @@ client_path = None
 
 async def main_setup():
     SP.print_status("info", 4, f"Creating active client")
-    active_client = await create_active_client
+    active_client = await create_active_client()
     await load_all_plugins(active_client)
     SP.print_status("success", 5, f"Active client created.")
     return active_client
